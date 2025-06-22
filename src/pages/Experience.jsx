@@ -1,69 +1,83 @@
 import { motion } from 'framer-motion'
-import { Briefcase } from 'lucide-react'
+import { Briefcase, ChevronRight } from 'lucide-react'
 
-const experiences = [
+const experienceTimeline = [
   {
-    title: "Support Executive → Frontend Developer",
-    company: "Your Company Name",
-    duration: "2022 – 2024",
-    details: [
-      "Started in support, pivoted into development through passion and upskilling.",
-      "Built and managed production-ready websites with WordPress, HTML/CSS, JS.",
-      "Transitioned to React + Tailwind for modern, component-based UIs.",
-      "Designed digital assets using Canva, Figma and created marketing videos.",
-      "Currently exploring backend with Node.js, Express.js & MongoDB."
+    company: "Height8 Technologies",
+    role: "Software Support Executive",
+    duration: "2021 – 2022",
+    description: [
+      "Began my tech career at 19 while pursuing B.Com.",
+      "Supported telecom software and performed basic UI tasks using HTML and CSS.",
+      "Interacted with international clients, notably from Ghana.",
     ],
   },
   {
-    title: "Freelance Web Projects",
-    company: "Clients & Personal Brands",
+    company: "Augmetic Technosys",
+    role: "Project Manager & Frontend Developer",
+    duration: "2022 – 2023",
+    description: [
+      "Handled support and project management single-handedly.",
+      "Built websites for clients in Norway and Las Vegas using HTML, CSS, JS, and WordPress.",
+      "Delivered end-to-end UI/UX for small business websites across industries.",
+    ],
+  },
+  {
+    company: "Add Pearlinfo Pvt. Ltd.",
+    role: "UI/UX Designer & Frontend Developer",
     duration: "2023 – Present",
-    details: [
-      "Delivered fully responsive landing pages and business websites.",
-      "Worked on SEO, performance tuning, and mobile optimization.",
-      "Took care of full-cycle delivery — design, development, deployment."
+    description: [
+      "Transitioned fully into frontend development with modern stacks like React, Tailwind, and Redux.",
+      "Built custom software UIs including amusement park and hospitality systems.",
+      "Created videos, graphics, and UI mockups for client products and internal tools.",
+      "Represented the company at GCCI Gate 2024 with the executive team.",
+      "Held a trusted onsite position at Gujarat High Court IT Cell.",
     ],
   },
 ]
 
 const Experience = () => {
   return (
-    <section className="min-h-screen px-6 py-20 bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="min-h-screen bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 py-20 px-4 md:px-10 text-gray-900 dark:text-white">
+      <div className="max-w-5xl mx-auto">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-12 tracking-tight"
+          className="text-4xl md:text-5xl font-bold text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Experience
+          My Journey & Experience
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {experiences.map((exp, index) => (
+        <div className="relative border-l border-blue-200 dark:border-gray-700">
+          {experienceTimeline.map((exp, idx) => (
             <motion.div
-              key={index}
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: idx * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-100 dark:border-gray-700"
+              className="mb-14 ml-6 relative"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-100 dark:bg-blue-800 p-2 rounded-full">
-                  <Briefcase className="w-5 h-5 text-blue-600 dark:text-white" />
+              <div className="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-blue-600 dark:bg-blue-500 border-4 border-white dark:border-gray-900 z-10" />
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-blue-100 dark:border-gray-700">
+                <div className="flex items-center gap-3 mb-2">
+                  <Briefcase className="text-blue-600 dark:text-blue-400 w-5 h-5" />
+                  <h3 className="text-xl font-semibold">{exp.role}</h3>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{exp.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{exp.company} • {exp.duration}</p>
-                </div>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                  {exp.company} • {exp.duration}
+                </p>
+                <ul className="list-inside mt-3 space-y-2 text-[15px] text-gray-700 dark:text-gray-300">
+                  {exp.description.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <ChevronRight className="w-4 h-4 mt-1 text-blue-500 dark:text-blue-400" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 text-[15px] text-left">
-                {exp.details.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>
