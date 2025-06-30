@@ -18,7 +18,7 @@ const allProjects = [
     image: "../img/pearlinfo-us.png",
     tech: ["wordpress"],
     github: "",
-    live: "pearlinfo.us",
+    live: "http://pearlinfo.us/",
     description: "Corporate website built with WordPress to showcase services and expertise of Pearlinfo US."
   },
   {
@@ -63,7 +63,7 @@ const allProjects = [
     image: "../img/spro.png",
     tech: ["wordpress", "SEO", "elementor"],
     github: "",
-    live: "spro.cloud",
+    live: "https://spro.cloud/",
     description: "Professional website for software solutions company, featuring SEO and Elementor customization."
   },
   {
