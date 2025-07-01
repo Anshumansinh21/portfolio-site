@@ -1,40 +1,48 @@
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter, Instagram, Home, User, Briefcase, Phone, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Home,
+  User,
+  Briefcase,
+  Phone,
+  FileText,
+} from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    // { icon: <Github size={20} />, url: "https://github.com", name: "GitHub" },
     { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/anshumansinh-rathore/", name: "LinkedIn" },
-    // { icon: <Twitter size={20} />, url: "https://twitter.com", name: "Twitter" },
-    // { icon: <Instagram size={20} />, url: "https://instagram.com", name: "Instagram" },
   ];
 
   const navLinks = [
-    { icon: <Home size={16} />, url: "/", name: "Home" },
-    { icon: <User size={16} />, url: "/about", name: "About" },
-    { icon: <Briefcase size={16} />, url: "/projects", name: "Projects" },
-    { icon: <FileText size={16} />, url: "/experience", name: "Experience" },
-    { icon: <Phone size={16} />, url: "/contact", name: "Contact" },
+    { icon: <Home size={16} />, path: '/', name: 'Home' },
+    { icon: <User size={16} />, path: '/about', name: 'About' },
+    { icon: <Briefcase size={16} />, path: '/projects', name: 'Work' },
+    { icon: <FileText size={16} />, path: '/experience', name: 'Experience' },
+    { icon: <Phone size={16} />, path: '/contact', name: 'Contact' },
   ];
 
   const techStack = [
-    { name: "React", color: "text-blue-400" },
-    { name: "Tailwind", color: "text-cyan-400" },
-    { name: "JavaScript", color: "text-yellow-400" },
-    { name: "HTML5", color: "text-orange-500" },
-    { name: "CSS3", color: "text-blue-500" },
-    { name: "Wordpress", color: "text-purple-500" },
-    { name: "Figma", color: "text-pink-500" },
-    { name: "Node.js", color: "text-green-500" },
+    { name: 'React', color: 'text-blue-400' },
+    { name: 'Tailwind', color: 'text-cyan-400' },
+    { name: 'JavaScript', color: 'text-yellow-400' },
+    { name: 'HTML5', color: 'text-orange-500' },
+    { name: 'CSS3', color: 'text-blue-500' },
+    { name: 'Wordpress', color: 'text-purple-500' },
+    { name: 'Figma', color: 'text-pink-500' },
+    { name: 'Node.js', color: 'text-green-500' },
   ];
 
   return (
     <footer className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 border-t border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Section */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -67,7 +75,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -76,25 +84,25 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Navigation</h3>
             <ul className="space-y-3">
               {navLinks.map((link, index) => (
-                <motion.li 
+                <motion.li
                   key={index}
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a 
-                    href={link.url} 
+                  <Link
+                    to={link.path}
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
                   >
                     {link.icon}
                     {link.name}
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </ul>
           </motion.div>
 
           {/* Contact Info */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -104,8 +112,8 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="text-blue-600 dark:text-blue-400" size={18} />
-                <a 
-                  href="mailto:hello@anshumansinh.com" 
+                <a
+                  href="mailto:hello@anshumansinh.com"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   ajrathore217@gmail.com
@@ -118,8 +126,8 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Tech Stack Section */}
-          <motion.div 
+          {/* Tech Stack */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -140,8 +148,8 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Copyright */}
-        <motion.div 
+        {/* Footer Bottom */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -149,7 +157,7 @@ const Footer = () => {
           className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500 dark:text-gray-400"
         >
           <p>&copy; {new Date().getFullYear()} Anshumansinh Rathore. All rights reserved.</p>
-          <p className="mt-2 text-xs">Built with  React</p>
+          <p className="mt-2 text-xs">Built with React</p>
         </motion.div>
       </div>
     </footer>
