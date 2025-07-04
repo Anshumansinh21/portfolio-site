@@ -7,22 +7,29 @@ import Contact from "./pages/Contact"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 
+import ScrollToTop from "./components/ScrollToTop"; // ✅ matches folder structure
+
+
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Projects" element={<Projects />} />
-          <Route path="/Experience" element={<Experience />} />
-          <Route path="/Contact" element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
-  )
+    <>
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Projects" element={<Projects />} />
+            <Route path="/Experience" element={<Experience />} />
+            <Route path="/Contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
 }
+
 
 export default App
