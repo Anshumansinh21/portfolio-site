@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import ProfileImage from '../../img/myImg.png';
+import ProfileImage from '../../public/img/test.jpeg';
 
 const titles = [
   "Crafts Code. Commands Attention.",
@@ -216,7 +216,7 @@ const Home = () => {
           <img
             src={ProfileImage}
             alt="Anshuman"
-            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-2xl border-4 border-white dark:border-gray-800 hover:scale-105 transition duration-500"
+            className="w-64 h-64 md:w-90 md:h-120 object-cover rounded-2xl shadow-2xl border-4 border-white dark:border-gray-800 hover:scale-105 transition duration-500"
           />
           <motion.div 
             className="absolute -inset-4 rounded-2xl border-2 border-blue-400 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"

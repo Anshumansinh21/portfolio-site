@@ -17,7 +17,7 @@ const experienceTimeline = [
   {
     company: "Augmetic Technosys",
     role: "Project Manager & Frontend Developer",
-    duration: "2022 – 2023",
+    duration: "2023 – 2024",
     description: [
       "Handled support and project management single-handedly.",
       "Built websites for clients in Norway and Las Vegas using HTML, CSS, JS, and WordPress.",
@@ -29,7 +29,7 @@ const experienceTimeline = [
   {
     company: "Add Pearlinfo Pvt. Ltd.",
     role: "UI/UX Designer & Frontend Developer",
-    duration: "2023 – Present",
+    duration: "2024 – Present",
     description: [
       "Transitioned fully into frontend development with modern stacks like React, Tailwind, and Redux.",
       "Built custom software UIs including amusement park and hospitality systems.",
