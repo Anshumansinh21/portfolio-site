@@ -1,6 +1,7 @@
 import React from "react"
 import { useForm, ValidationError } from "@formspree/react"
 import { motion } from "framer-motion"
+motion
 import { Github, Linkedin, Mail, Phone } from "lucide-react"
 import imagelogo from "../../img/My_Logo.jpeg";
 

@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
+motion
 import { Briefcase, ChevronRight, Globe, Users, Code, TrendingUp } from 'lucide-react'
 
 const experienceTimeline = [
   {
     company: "Height8 Technologies",
     role: "Software Support Executive",
-    duration: "2021 – 2022",
+    duration: "2022 – 2023",
     description: [
       "Began my tech career at 19 while pursuing B.Com.",
       "Supported telecom software and performed basic UI tasks using HTML and CSS.",

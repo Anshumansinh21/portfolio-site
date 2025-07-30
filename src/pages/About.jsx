@@ -14,6 +14,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+motion
 
 const About = () => {
   const [isHovered, setIsHovered] = useState(false);

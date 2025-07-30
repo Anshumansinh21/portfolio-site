@@ -4,6 +4,7 @@ import { Github, ExternalLink, Download, Video, Maximize, X } from "lucide-react
 import Modal from 'react-modal'
 import { Document, Page, pdfjs } from 'react-pdf'
 // import 'react-pdf/dist/esm/Page/AnnotationLayer.css'
+motion
 
 // Configure PDF worker
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`

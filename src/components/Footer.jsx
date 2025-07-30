@@ -12,6 +12,7 @@ import {
   Phone,
   FileText,
 } from 'lucide-react';
+motion
 
 const Footer = () => {
   const socialLinks = [

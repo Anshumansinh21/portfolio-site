@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import ProfileImage from '../../public/img/test.jpeg';
+motion
 
 const titles = [
   "Crafts Code. Commands Attention.",
